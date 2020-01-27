@@ -7,11 +7,12 @@ updated:
 To use this project, what you need to do is open the file Spider_for_A1 and you may start as follows:
 
   1. Download the chromedriver.exe from url: https://chromedriver.chromium.org/downloads based your chorme version. (You may get the info from the "about" section in your google)
-  2. Copy the path of your chromedriver.exe, and past it to EXACUTABLE_PATH under the an_li.py.
-  3. Run the module collector.py to get the web links.
-  4. Run the module price_spider.py to get the price data based on the web links.
-  5. Run the module info_spider.py to get the bond info data based on the web links.
-  6. Run the module finalize.py to combine the 2 data into one as results.txt and results.csv.
+  2. Download the selenium pakage via: pip install selenium.
+  3. Copy the path of your chromedriver.exe, and past it to EXACUTABLE_PATH under the an_li.py.
+  4. Run the module collector.py to get the web links.
+  5. Run the module price_spider.py to get the price data based on the web links.
+  6. Run the module info_spider.py to get the bond info data based on the web links.
+  7. Run the module finalize.py to combine the 2 data into one as results.txt and results.csv.
 
 Notice:
 

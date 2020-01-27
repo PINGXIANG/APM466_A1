@@ -1,6 +1,7 @@
 import random
 from typing import List
 import csv
+from Spider_for_A1 import an_li
 
 from selenium import webdriver
 
@@ -9,10 +10,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-from Spider_for_A1 import an_li
-
-EXECUTABLE_PATH = 'chromedriver.exe'
 
 def list_to_str(my_list: List[str]):
     result = ""
@@ -32,10 +29,11 @@ if __name__ == "__main__":
 
     an_li.an_li()
 
+    driver = webdriver.Chrome(an_li.EXECUTABLE_PATH)
     infos = []
     i = 0
+
     for html in htmls:
-        driver = webdriver.Chrome()
         driver.get(html)
 
         time.sleep(5)
@@ -50,10 +48,10 @@ if __name__ == "__main__":
         info = [id, coupon, issue_date, maturity_date]
         infos.append(info)
 
-        driver.close()
-
         print(str(i) + " webs finished in total, with " + str(32-i) + " webs left to scrap.")
         i = i + 1
+
+    driver.close()
 
     f = open("infos.txt", "w", newline="")
     for info in infos:

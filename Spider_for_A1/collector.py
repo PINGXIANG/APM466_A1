@@ -1,5 +1,6 @@
 import random
 from typing import List
+from Spider_for_A1 import an_li
 
 from selenium import webdriver
 
@@ -8,8 +9,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-EXECUTABLE_PATH = 'chromedriver.exe'
 
 WEB_1 = "https://markets.businessinsider.com/bonds/finder?borrower=71&maturity=shortterm&yield=&bondtype=2%2c3%2c4%2c16&coupon=&currency=184&rating=&country=19"
 WEB_2 = "https://markets.businessinsider.com/bonds/finder?borrower=71&maturity=midterm&yield=&bondtype=2%2c3%2c4%2c16&coupon=&currency=184&rating=&country=19"
@@ -20,8 +19,8 @@ WEB = [WEB_1, WEB_2]
 if __name__ == "__main__":
 
     # One can definitely optimize this file a lot. But I will not do it due to the time limit...
+    driver = webdriver.Chrome(an_li.EXECUTABLE_PATH)
     for web in WEB:
-        driver = webdriver.Chrome()
         driver.get(web)
 
         time.sleep(10)
@@ -31,14 +30,16 @@ if __name__ == "__main__":
         htmls = []
         for web_element in a:
             html = web_element.get_attribute("href")
-            new_html = html[:html.find("bonds/")] + "bond/historical/" + html[html.find("bonds/")+6:]
+            new_html = html[:html.find("bonds/")] + "bond/historical/" + html[html.find("bonds/")+6:] + "/stu/2.1.2020_15.1.2020"
             htmls.append(new_html)
 
         f = open("historical.txt", "a", newline="")
         for html in htmls:
             f.write(html + "\n")
         f.close()
-        driver.close()
+
+    driver.close()
+
     print("historical.txt ready.")
 
     # Give snapshot.txt ready. If only I have done this when before historical.txt...

@@ -34,9 +34,15 @@ Notice:
   # bibtex citattion
   
   @misc{Patrick2020,
-  author = {Tianhao, Wang},
-  title = {APM466 spider for assignment 1},
-  year = {2020},
-  journal = {Github},
-  howpublished = {\url{https://github.com/PINGXIANG/APM466_A1}},
+  
+   author = {Tianhao, Wang},
+  
+   title = {APM466 spider for assignment 1},
+  
+   year = {2020},
+  
+   journal = {Github},
+   
+   howpublished = {\url{https://github.com/PINGXIANG/APM466_A1}},
+
 }

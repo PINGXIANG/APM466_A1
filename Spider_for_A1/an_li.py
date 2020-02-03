@@ -36,4 +36,18 @@ def an_li():
 print("用我软件，吃我安利 o(*￣▽￣*)ブ")
 
 if __name__ == "__main__":
-    an_li()
+
+    f = open("selected_ISIN.txt", "r", newline="")
+    txt = f.readlines()
+    id = txt[0].split(" ")
+    coupon = txt[1].split(" ")
+    date = txt[2].split(" ")
+    f.close()
+
+    f = open("selected_ISIN.txt", "a", newline="")
+    i = 0
+    while i < len(id):
+        new_line = id[i].strip() + " & " + coupon[i].strip() + " & " + date[i].strip()
+        f.write(new_line + "\n")
+        i = i + 1
+    f.close()

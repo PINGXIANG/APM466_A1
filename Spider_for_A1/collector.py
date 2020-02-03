@@ -20,7 +20,6 @@ if __name__ == "__main__":
 
     # One can definitely optimize this file a lot. But I will not do it due to the time limit...
     driver = webdriver.Chrome(an_li.EXECUTABLE_PATH)
-    htmls = []
     for web in WEB:
         driver.get(web)
 
@@ -28,18 +27,19 @@ if __name__ == "__main__":
 
         # Get the blue print of all necessary web link.
         a = driver.find_elements_by_partial_link_text("Government of")
+        htmls = []
         for web_element in a:
             html = web_element.get_attribute("href")
-            new_html = html[:html.find("bonds/")] + "bond/historical/" + html[html.find("bonds/")+6:] + "/fse/2.1.2020_15.1.2020"
+            new_html = html[:html.find("bonds/")] + "bond/historical/" + html[html.find("bonds/")+6:] + "/stu/2.1.2020_15.1.2020"
             htmls.append(new_html)
 
+        f = open("historical.txt", "a", newline="")
+        for html in htmls:
+            f.write(html + "\n")
+        f.close()
+
     driver.close()
-    
-    f = open("historical.txt", "w", newline="")
-    for html in htmls:
-        f.write(html + "\n")
-    f.close()
-    
+
     print("historical.txt ready.")
 
     # Give snapshot.txt ready. If only I have done this when before historical.txt...

@@ -27,7 +27,7 @@ if __name__ == "__main__":
         htmls.append(html)
     f.close()
 
-    # an_li.an_li()
+    an_li.an_li()
 
     prices = []
     i = 0
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         price.reverse()
         prices.append(price)
 
-        print(str(i) + " webs finished in total, with " + str(32 - i) + " webs left to scrap.")
+        print(str(i+1) + " webs finished in total, with " + str(32-i-1) + " webs left to scrap.")
         i = i + 1
 
     driver.close()

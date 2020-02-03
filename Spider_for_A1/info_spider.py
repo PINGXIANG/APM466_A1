@@ -48,7 +48,7 @@ if __name__ == "__main__":
         info = [id, coupon, issue_date, maturity_date]
         infos.append(info)
 
-        print(str(i) + " webs finished in total, with " + str(32-i) + " webs left to scrap.")
+        print(str(i+1) + " webs finished in total, with " + str(32-i-1) + " webs left to scrap.")
         i = i + 1
 
     driver.close()

@@ -30,3 +30,19 @@ Notice:
   By doing so, you may skip step 3.
   
   3. You may use BeatifulSoup instead. BS can be run behind the screen. The problem is the HTML BS read in our assignment is kind of wried for some reason I don't know. Therefore, I simply give it up. 
+  
+  # bibtex citattion
+  
+  @misc{Patrick2020, 
+  
+   author = {Tianhao, Wang}, 
+   
+   title = {APM466 spider for assignment 1},
+   
+   year = {2020},
+   
+   journal = {Github},
+   
+   howpublished = {\url{https://github.com/PINGXIANG/APM466_A1}},
+
+}

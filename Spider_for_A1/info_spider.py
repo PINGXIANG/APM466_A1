@@ -18,7 +18,7 @@ def list_to_str(my_list: List[str]):
 
     return result
 
-if __name__ == "__main__":
+def scrap_info_link():
 
     # Start scrap info of each bond
     f = open("snapshot.txt", "r", newline="")

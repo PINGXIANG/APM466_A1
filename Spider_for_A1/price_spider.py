@@ -10,7 +10,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from Spider_for_A1 import an_li
+import an_li
 
 def list_to_str(my_list: List[str]):
     result = ""
@@ -19,7 +19,7 @@ def list_to_str(my_list: List[str]):
 
     return result
 
-if __name__ == "__main__":
+def scrap_data():
 
     f = open("historical.txt", "r", newline="")
     htmls = []
@@ -27,6 +27,7 @@ if __name__ == "__main__":
         htmls.append(html)
     f.close()
 
+    # A small joke ~
     an_li.an_li()
 
     prices = []

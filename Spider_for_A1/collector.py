@@ -1,6 +1,6 @@
 import random
 from typing import List
-from Spider_for_A1 import an_li
+import an_li
 
 from selenium import webdriver
 
@@ -16,7 +16,7 @@ WEB_2 = "https://markets.businessinsider.com/bonds/finder?borrower=71&maturity=m
 WEB = [WEB_1, WEB_2]
 
 
-if __name__ == "__main__":
+def collect_web_info():
 
     # One can definitely optimize this file a lot. But I will not do it due to the time limit...
     driver = webdriver.Chrome(an_li.EXECUTABLE_PATH)

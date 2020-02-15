@@ -14,7 +14,7 @@ def txt_to_csv(rsc: str):
     g.close()
 
 
-if __name__ == "__main__":
+def finalize():
 
     infos = []
     f = open("infos.txt", "r", newline="")
